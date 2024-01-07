@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GreenKiim"
+rootProject.name = "GreenKim"
 include(":app")

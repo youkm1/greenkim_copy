@@ -4,10 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material3.Divider
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButtonDefaults
@@ -26,10 +28,10 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
+
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
+import androidx.compose.ui.text.font.FontWeight.Companion.Thin
 
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -49,7 +51,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    MainScreen()
                 }
             }
         }
@@ -58,7 +60,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column {
+    Column(modifier = Modifier.background(Color.White)) {
         TopScreen()
         Spacer(modifier = modifier.size(20.dp))
         CommunitySection()
@@ -80,9 +82,15 @@ fun TopScreen(modifier: Modifier = Modifier) {
                 color = Color(0xFF22C571),
                 fontFamily = lineKorFamily,
                 fontWeight = Bold,
+                fontSize = 20.sp,
+                letterSpacing = 2.sp,
+            )
+            Text(
+                text = "어떤 하루를 보내고 계신가요?",
+                fontFamily = lineKorFamily,
+                fontWeight = Thin,
                 fontSize = 20.sp
             )
-            Text(text = "어떤 하루를 보내고 계신가요?", fontWeight = FontWeight.Bold)
         }
 
     }
@@ -97,25 +105,38 @@ fun CommunitySection() {
             .fillMaxWidth()
             .padding(start = 30.dp)
     ) {
-        Text(text = "김그린 인기글")
+        Text(text = "김그린 인기글", fontSize = 30.sp, fontFamily = lineKorFamily)
         Icon(
             imageVector = Icons.Filled.ArrowForward, contentDescription = null, modifier = Modifier
-                .padding(start = 240.dp)
+                .padding(start = 150.dp)
                 .size(20.dp)
         )
     }
+    Spacer(modifier = Modifier.size(5.dp))
+    Divider(
+        color = Color.Black, modifier = Modifier
+            .size(height = 1.dp, width = 200.dp)
+            .padding(start = 30.dp)
+    )
     Spacer(modifier = Modifier.size(10.dp))
-    OutlinedCard(Modifier.fillMaxWidth()) {
+    Column(modifier = Modifier.padding(start = 30.dp)) {
         TextButton(onClick = { /*TODO*/ }) {
-            Text(text = "오늘 밤 진짜 너무 춥다 날씨 실화냐 버스 타고 집 오는데 도로...")
+            Text(
+                text = "오늘 밤 진짜 너무 춥다 날씨 실화냐 버스 타고 집 오는데 도로...",
+                fontFamily = lineKorFamily,
+                fontSize = 18.sp
+            )
         }
 
-
         TextButton(onClick = { /*TODO*/ }) {
-            Text(text = "서울역 근처 제로웨이스트 샵 추천 간다 ㅋ")
+            Text(text = "서울역 근처 제로웨이스트 샵 추천 간다 ㅋ", fontFamily = lineKorFamily, fontSize = 18.sp)
         }
         TextButton(onClick = { /*TODO*/ }) {
-            Text(text = "[서울 비건 활동 모임]- 관심 있는 그린이들 어서 오세요 마감일...")
+            Text(
+                text = "[서울 비건 활동 모임]- 관심 있는 그린이들 어서 오세요 마감일...",
+                fontFamily = lineKorFamily,
+                fontSize = 18.sp
+            )
         }
     }
 
@@ -123,133 +144,135 @@ fun CommunitySection() {
 
 @Composable
 fun ZeroTodoSection() {
+    Spacer(modifier = Modifier.size(25.dp))
     Column(
         Modifier
             .fillMaxWidth()
+            .fillMaxHeight()
             .padding(start = 30.dp)
     ) {
+        Spacer(modifier = Modifier.size(15.dp))
         Row {
-            Text(text = "오늘의 제로웨이스트 활동")
+            Text(text = "오늘의 제로웨이스트 활동", fontFamily = lineKorFamily, fontSize = 30.sp)
             Icon(
                 imageVector = Icons.Filled.ArrowForward,
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(start = 160.dp)
+                    .padding(start = 30.dp)
                     .size(20.dp)
             )
 
         }
         Spacer(modifier = Modifier.size(20.dp))
-        Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-            zerobtns()
-            zerobtns()
-            zerobtns()
-        }
-
+        ZeroActivities()
     }
 }
 
-@Composable
-fun zerobtns() {
-    Column {
-        FilledIconButton(
-            onClick = { /*TODO*/ },
-            modifier =
-            Modifier
-                .size(80.dp),
-            colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
-        ) {
-            Icon(
-                painter = painterResource(id = R.drawable.e_receipt),
-                contentDescription = null
-            )
-
-        }
-        Text(
-            text = "전자영수증"
-        )
-    }
-}
 
 @Composable
-fun LazyRowEx() {
-    LazyRow(
-        modifier = Modifier
-            .padding(16.dp)
-    ) {
-        items(7) { index ->
+fun ZeroActivities() {
+    LazyRow() {
+        item(7) {
             FilledIconButton(
+                onClick = { /*TODO*/ },
                 modifier =
                 Modifier
-                    .padding(10.dp)
-                    .size(80.dp),
-                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF)),
-                onClick = {
-                    when (index) {
-                        0 -> {
-
-                        }
-
-                        1 -> {
-
-                        }
-
-                        2 -> {
-
-                        }
-
-                        3 -> {
-
-                        }
-
-                        4 -> {
-
-                        }
-
-                        5 -> {
-
-                        }
-
-                        6 -> {
-
-                        }
-
-                        7 -> {
-
-                        }
-                    }
-                },
+                    .padding(end = 12.dp)
+                    .size(100.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.e_receipt),
+                    contentDescription = null
                 )
-            {
-        
-            Icon(painter = painterResource(id = R.drawable.e_receipt), contentDescription = null)
-                Icon(painter = painterResource(id = R.drawable.frog), contentDescription = null)
-
-
             }
-
-
+            FilledIconButton(
+                onClick = { /*TODO*/ },
+                modifier =
+                Modifier
+                    .padding(end = 12.dp)
+                    .size(100.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.reform),
+                    contentDescription = null
+                )
+            }
+            FilledIconButton(
+                onClick = { /*TODO*/ },
+                modifier =
+                Modifier
+                    .padding(end = 12.dp)
+                    .size(100.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.reuse),
+                    contentDescription = null
+                )
+            }
+            FilledIconButton(
+                onClick = { /*TODO*/ },
+                modifier =
+                Modifier
+                    .padding(end = 12.dp)
+                    .size(100.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.transport),
+                    contentDescription = null
+                )
+            }
+            FilledIconButton(
+                onClick = { /*TODO*/ },
+                modifier =
+                Modifier
+                    .padding(end = 12.dp)
+                    .size(100.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.flogging),
+                    contentDescription = null
+                )
+            }
+            FilledIconButton(
+                onClick = { /*TODO*/ },
+                modifier =
+                Modifier
+                    .padding(end = 12.dp)
+                    .size(100.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.plastic_free),
+                    contentDescription = null
+                )
+            }
+            FilledIconButton(
+                onClick = { /*TODO*/ },
+                modifier =
+                Modifier
+                    .padding(end = 12.dp)
+                    .size(100.dp),
+                colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.etc),
+                    contentDescription = null
+                )
+            }
         }
     }
-
 }
 
+@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun btns(icons: ImageVector) {
-    Image(painter = painterResource(id = R.drawable.e_receipt), contentDescription = null)
-
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun GreetingPreview() {
+fun Preview() {
     GreenKimTheme {
         MainScreen()
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-fun preLazo() {
-    LazyRowEx()
-}

@@ -14,7 +14,7 @@ class CommunityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val fragmentList = listOf(ComfirmationFragment(),CommunityFragment())
+        val fragmentList = listOf(CommunityFragment(),ComfirmationFragment())
 
         val adapter = FragmentAdapter(this)
         adapter.fragmentList = fragmentList

@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CommunityFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Commu1"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+
+
+             />
+
+        <TextView
+            android:id="@+id/Commu1Content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Commu2"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/Commu2Content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Commu3"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/Commu3Content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Commu4"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/Commu4Content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="" />
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

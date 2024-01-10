@@ -1,8 +1,10 @@
 package com.example.greenkim
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -19,6 +21,7 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material3.Divider
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
@@ -28,6 +31,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
@@ -36,6 +40,7 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Thin
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 
 import com.example.greenkim.ui.theme.GreenKimTheme
 import com.example.greenkim.ui.theme.lineKorFamily
@@ -61,7 +66,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
     Column(modifier = Modifier.background(Color.White)) {
-        TopScreen()
+        TopMainScreen()
         Spacer(modifier = modifier.size(20.dp))
         CommunitySection()
         Spacer(modifier = modifier.size(40.dp))
@@ -72,10 +77,10 @@ fun MainScreen(modifier: Modifier = Modifier) {
 
 
 @Composable
-fun TopScreen(modifier: Modifier = Modifier) {
+fun TopMainScreen(modifier: Modifier = Modifier) {
     Row(Modifier.padding(20.dp)) {
         //대표뱃지는 300x300
-        Image(painter = painterResource(id = R.drawable.badge), contentDescription = "logo")
+        Image(painter = painterResource(id = R.drawable.badge), contentDescription = "badge")
         Column(Modifier.padding(top = 30.dp, start = 10.dp)) {
             Text(
                 "프로 기타리스트 송이님",
@@ -98,6 +103,7 @@ fun TopScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun CommunitySection() {
+    val context = LocalContext.current
     Spacer(modifier = Modifier.size(30.dp))
 
     Row(
@@ -106,11 +112,20 @@ fun CommunitySection() {
             .padding(start = 30.dp)
     ) {
         Text(text = "김그린 인기글", fontSize = 30.sp, fontFamily = lineKorFamily)
-        Icon(
-            imageVector = Icons.Filled.ArrowForward, contentDescription = null, modifier = Modifier
-                .padding(start = 150.dp)
-                .size(20.dp)
-        )
+        IconButton(
+            onClick =
+        {
+            val intent = Intent(context,CommunityActivity::class.java)
+            startActivity(context,intent,null)
+        },
+            modifier = Modifier
+                .padding(start = 160.dp)
+                .size(20.dp),) {
+            Icon(
+                imageVector = Icons.Filled.ArrowForward, contentDescription = null,
+            )
+        }
+
     }
     Spacer(modifier = Modifier.size(5.dp))
     Divider(
@@ -154,13 +169,17 @@ fun ZeroTodoSection() {
         Spacer(modifier = Modifier.size(15.dp))
         Row {
             Text(text = "오늘의 제로웨이스트 활동", fontFamily = lineKorFamily, fontSize = 30.sp)
-            Icon(
-                imageVector = Icons.Filled.ArrowForward,
-                contentDescription = null,
+            IconButton(onClick = { /*TODO*/ },
                 modifier = Modifier
-                    .padding(start = 30.dp)
-                    .size(20.dp)
-            )
+                .padding(start = 20.dp)
+                .size(20.dp))
+            {
+                Icon(
+                    imageVector = Icons.Filled.ArrowForward,
+                    contentDescription = null,
+                )
+            }
+
 
         }
         Spacer(modifier = Modifier.size(20.dp))

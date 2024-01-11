@@ -13,79 +13,102 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="650sp"
-            android:orientation="vertical"
-            android:background="@drawable/bottom_rounded_shape">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="제로웨이스트란?"
-                android:textStyle="bold"
-                android:textSize="35sp"
-                android:gravity="center"
-                android:paddingTop="50sp"
-                android:textColor="#3A8E66"
-                android:fontFamily="@font/lineseed_kor_bold"/>
+                android:layout_height="650sp"
+                android:orientation="vertical"
+                android:background="@drawable/bottom_rounded_shape">
 
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:src="@drawable/logo"
-                android:layout_gravity="center"
-                android:paddingTop="30sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="제로웨이스트란?"
+                    android:textStyle="bold"
+                    android:textSize="35sp"
+                    android:gravity="center"
+                    android:paddingTop="50sp"
+                    android:textColor="#3A8E66"
+                    android:fontFamily="@font/lineseed_kor_bold"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="환경을 보호하기 위해\n쓰레기 배출량을 줄이는 활동"
-                android:gravity="center"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textColor="#3A8E66"
-                android:paddingBottom="10dp"
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/logo"
+                    android:layout_gravity="center"/>
 
-                android:fontFamily="@font/lineseed_kor_rg"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="환경을 보호하기 위해\n쓰레기 배출량을 줄이는 활동"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="#3A8E66"
+                    android:paddingBottom="10dp"
+                    android:fontFamily="@font/lineseed_kor_rg"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="50dp"
-                android:outlineSpotShadowColor="@android:color/white"
-                android:paddingTop="10dp"
-                >
-
-                <RelativeLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#ffffff">
-
+                    android:outlineSpotShadowColor="@android:color/white"
+                    app:cardCornerRadius="50dp">
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="270dp"
-                        android:src="@drawable/intro1_photo"
+                        android:layout_height="match_parent"
                         android:scaleType="centerCrop"
+                        android:src="@drawable/intro1_photo"
                         android:layout_alignParentBottom="true"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/intro1_ellipse1" />
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="-21dp"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/intro1_ellipse2" />
+            </LinearLayout>
 
-                </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="0dp">
 
-            </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/checked_btn"
+                    android:layout_gravity="center"
+                    android:padding="3dp"/>
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/unchecked_btn"
+                    android:layout_gravity="center"
+                    android:padding="3dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/unchecked_btn"
+                    android:layout_gravity="center"
+                    android:padding="3dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/unchecked_btn"
+                    android:layout_gravity="center"
+                    android:padding="3dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/unchecked_btn"
+                    android:layout_gravity="center"
+                    android:padding="3dp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

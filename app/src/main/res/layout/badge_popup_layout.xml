@@ -25,8 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_foreground"            android:layout_gravity="center"
             android:scaleType="centerCrop"
             android:layout_marginBottom="16dp"/>
 

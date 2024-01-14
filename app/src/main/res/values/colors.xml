@@ -1,4 +1,6 @@
 <resources>
+    <color name="FAB_Community">#FFE502</color>
+    <color name="FAB_Proof">#36B47A</color>
     <color name="md_theme_primary">#256A4A</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_primaryContainer">#ABF2C9</color>

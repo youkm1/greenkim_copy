@@ -7,12 +7,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-public enum class BadgeList (
+enum class BadgeList (
     val badge:String,
     val badgeNum:Int,
-    val badgeImg:Int
+    val badgeImg:Int,
+    var isProfileBadge: Boolean = false,
+    var isEarned: Boolean = false
 ){
-    BLANK("",-1,-1),
+    BLANK("",-1,R.drawable.ic_launcher_foreground),
     MENTOR("그린 멘토",5,R.drawable.mentor),
     MENTEE("그린 멘티",5,R.drawable.mentee),
     EARLYBIRD("얼리버드",3,R.drawable.earlybird),

@@ -1,10 +1,8 @@
 package com.example.greenkim
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.greenkim.databinding.ActivityCommunityBinding
-import com.example.greenkim.databinding.FragmentComfirmationBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class CommunityActivity : AppCompatActivity() {
@@ -14,16 +12,22 @@ class CommunityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val fragmentList = listOf(CommunityFragment(),ComfirmationFragment())
+        val fragmentList = listOf(CommunityFragment(), ComfirmationFragment())
 
-        val adapter = FragmentAdapter(this)
-        adapter.fragmentList = fragmentList
+        val adapter_fragment = FragmentAdapter(this)
+        adapter_fragment.fragmentList = fragmentList
 
-        binding.viewPager.adapter = adapter
+        binding.viewPager.adapter = adapter_fragment
 
-        val tabTitles = listOf<String>("Community","Proof")
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) {tab, position ->
+        val tabTitles = listOf<String>("Community", "Proof")
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = tabTitles[position]
         }.attach()
+
+
+
     }
+
+
+
 }

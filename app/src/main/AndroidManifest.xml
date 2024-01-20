@@ -13,10 +13,10 @@
         android:theme="@style/Theme.GreenKim"
         tools:targetApi="31">
         <activity
-            android:name=".CommunityActivity"
+            android:name=".PostActivity"
             android:exported="true"
             android:label="@string/title_activity_community"
-            android:theme="@style/Theme.GreenKim" >
+            android:theme="@style/Theme.GreenKim">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,9 +27,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.GreenKim">
-
-        </activity>
+            android:theme="@style/Theme.GreenKim"></activity>
     </application>
 
 </manifest>

@@ -36,7 +36,7 @@ enum class BadgeList (
     ETC_3("아마추어 기타리스트",3,R.drawable.amateur_guitarist),
     ETC_10("프로 기타리스트",10,R.drawable.pro_guitarist),
     ADVENTURER("환경 모험가",-1,R.drawable.adventurer),
-    DOCTOR("김그린 박사",-1,R.drawable.doctor),
+    DOCTOR("새싹 김그린",-1,R.drawable.sprout),
     GOLDEN_KIMGREEN("황금 김그린",-1,R.drawable.golden_kimgreen)
 }
 

@@ -12,6 +12,8 @@ class CommunityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val fragmentToLoad = intent.getStringExtra("fragmentToLoad")
+
         val fragmentList = listOf(CommunityFragment(), ComfirmationFragment())
 
         val adapter_fragment = FragmentAdapter(this)
@@ -24,7 +26,11 @@ class CommunityActivity : AppCompatActivity() {
             tab.text = tabTitles[position]
         }.attach()
 
-
+        fragmentToLoad?.let {
+            if (it == "ProofFragment") {
+                binding.viewPager.currentItem = 1
+            }
+        }
 
     }
 

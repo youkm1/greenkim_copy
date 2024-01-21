@@ -159,6 +159,8 @@ fun CommunitySection() {
 
 @Composable
 fun ZeroTodoSection() {
+    val context = LocalContext.current
+
     Spacer(modifier = Modifier.size(25.dp))
     Column(
         Modifier
@@ -169,7 +171,13 @@ fun ZeroTodoSection() {
         Spacer(modifier = Modifier.size(15.dp))
         Row {
             Text(text = "오늘의 제로웨이스트 활동", fontFamily = lineKorFamily, fontSize = 30.sp)
-            IconButton(onClick = { /*TODO*/ },
+            IconButton(
+                onClick =
+                {
+                    val intent = Intent(context, CommunityActivity::class.java)
+                    intent.putExtra("fragmentToLoad", "ProofFragment")
+                    startActivity(context, intent, null)
+                },
                 modifier = Modifier
                 .padding(start = 20.dp)
                 .size(20.dp))
@@ -179,8 +187,6 @@ fun ZeroTodoSection() {
                     contentDescription = null,
                 )
             }
-
-
         }
         Spacer(modifier = Modifier.size(20.dp))
         ZeroActivities()

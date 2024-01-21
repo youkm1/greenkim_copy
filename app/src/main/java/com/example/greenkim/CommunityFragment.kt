@@ -1,5 +1,6 @@
 package com.example.greenkim
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.greenkim.databinding.FragmentCommunityBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,7 +49,6 @@ class CommunityFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val postList = getPosts()
         val adapter = PostsAdapter()
         adapter.listData = postList
@@ -57,6 +58,19 @@ class CommunityFragment : Fragment() {
         return binding.root
 
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val fabCommunity = view.findViewById<FloatingActionButton>(R.id.FAB_Community)
+
+        fabCommunity.setOnClickListener {
+            // FAB_Community를 클릭할 때의 동작 정의
+            val intent = Intent(requireContext(), PostActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
 
     fun getPosts(): MutableList<posts> {
 

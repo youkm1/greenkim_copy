@@ -39,7 +39,7 @@ class PostActivity : AppCompatActivity() {
         val boardSpinner = findViewById<Spinner>(R.id.boardSpinner)
 
         // 드롭다운 메뉴 설정
-        val boardOptions = arrayOf("게시판1", "게시판2", "게시판3")
+        val boardOptions = arrayOf("일상", "정보 공유", "질문하기")
         val adapter = ArrayAdapter<String>(this, R.layout.spinner_dropdown_item, boardOptions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         boardSpinner.adapter = adapter

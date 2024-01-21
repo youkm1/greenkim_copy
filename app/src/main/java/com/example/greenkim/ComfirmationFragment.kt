@@ -1,5 +1,6 @@
 package com.example.greenkim
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.greenkim.databinding.FragmentComfirmationBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,7 +49,20 @@ class ComfirmationFragment : Fragment() {
         return binding.root
     }
 
-    fun getPosts(): MutableList<posts> {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val fabProof = view.findViewById<FloatingActionButton>(R.id.FAB_Proof)
+
+        fabProof.setOnClickListener {
+            // FAB_Proof를 클릭할 때의 동작 정의
+            val intent = Intent(requireContext(), CheckPostActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+
+        fun getPosts(): MutableList<posts> {
 
         var postList = mutableListOf<posts>()
         for (i in 1..10) {

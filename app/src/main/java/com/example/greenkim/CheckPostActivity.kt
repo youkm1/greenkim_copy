@@ -18,7 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 
-class PostActivity : AppCompatActivity() {
+class CheckPostActivity : AppCompatActivity() {
 
     private val PICK_IMAGE_REQUEST = 1
     private val TAKE_PICTURE_REQUEST = 2
@@ -27,7 +27,7 @@ class PostActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post)
+        setContentView(R.layout.activity_check_post)
 
         val addImage = findViewById<ImageView>(R.id.add_image)
         val imageContainer = findViewById<LinearLayout>(R.id.image_container)
@@ -37,10 +37,10 @@ class PostActivity : AppCompatActivity() {
             showImageSourceDialog()
         }
 
-        val boardSpinner = findViewById<Spinner>(R.id.boardSpinner)
+        val boardSpinner = findViewById<Spinner>(R.id.checkboardSpinner)
 
         // 드롭다운 메뉴 설정
-        val boardOptions = arrayOf("일상", "정보 공유", "질문하기")
+        val boardOptions = arrayOf("전자영수증 발급받기", "리유저블 활동", "플라스틱 프리", "플로깅", "리폼", "대중교통 자전거", "기타")
         val adapter = ArrayAdapter<String>(this, R.layout.spinner_dropdown_item, boardOptions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         boardSpinner.adapter = adapter
@@ -62,7 +62,7 @@ class PostActivity : AppCompatActivity() {
             }
         }
 
-        val checkPostingBtn = findViewById<Button>(R.id.postingBtn)
+        val checkPostingBtn = findViewById<Button>(R.id.checkPostingBtn)
 
         checkPostingBtn.setOnClickListener {
             // 포스팅 완료 버튼을 클릭할 때의 동작 정의

@@ -2,9 +2,9 @@ package com.example.greenkim
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Spinner
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -25,11 +25,12 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -198,10 +199,16 @@ fun ZeroTodoSection() {
 
 @Composable
 fun ZeroActivities() {
+    val context = LocalContext.current
+
     LazyRow() {
         item(7) {
             FilledIconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    val intent=Intent(context, CheckPostActivity::class.java)
+                    intent.putExtra("selectedBoard", "전자영수증 발급받기")
+                    startActivity(context,intent,null)
+                          },
                 modifier =
                 Modifier
                     .padding(end = 12.dp)
@@ -227,7 +234,11 @@ fun ZeroActivities() {
                 }
             }
             FilledIconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    val intent=Intent(context, CheckPostActivity::class.java)
+                    intent.putExtra("selectedBoard", "리유저블 활동")
+                    startActivity(context,intent,null)
+                },
                 modifier =
                 Modifier
                     .padding(end = 12.dp)
@@ -253,7 +264,11 @@ fun ZeroActivities() {
                 }
             }
             FilledIconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    val intent=Intent(context, CheckPostActivity::class.java)
+                    intent.putExtra("selectedBoard", "플라스틱 프리")
+                    startActivity(context,intent,null)
+                },
                 modifier =
                 Modifier
                     .padding(end = 12.dp)
@@ -279,7 +294,12 @@ fun ZeroActivities() {
                 }
             }
             FilledIconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    val intent=Intent(context, CheckPostActivity::class.java)
+                    intent.putExtra("selectedBoard", "리폼")
+                    intent.putExtra("selectedBoard", "플로깅")
+                    startActivity(context,intent,null)
+                },
                 modifier =
                 Modifier
                     .padding(end = 12.dp)
@@ -305,7 +325,11 @@ fun ZeroActivities() {
                 }
             }
             FilledIconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    val intent=Intent(context, CheckPostActivity::class.java)
+                    intent.putExtra("selectedBoard", "리폼")
+                    startActivity(context,intent,null)
+                },
                 modifier =
                 Modifier
                     .padding(end = 12.dp)
@@ -331,7 +355,11 @@ fun ZeroActivities() {
                 }
             }
             FilledIconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    val intent=Intent(context, CheckPostActivity::class.java)
+                    intent.putExtra("selectedBoard", "대중교통 자전거")
+                    startActivity(context,intent,null)
+                },
                 modifier =
                 Modifier
                     .padding(end = 12.dp)
@@ -357,7 +385,11 @@ fun ZeroActivities() {
                 }
             }
             FilledIconButton(
-                onClick = { /*TODO*/ },
+                onClick = {
+                    val intent=Intent(context, CheckPostActivity::class.java)
+                    intent.putExtra("selectedBoard", "기타")
+                    startActivity(context,intent,null)
+                },
                 modifier =
                 Modifier
                     .padding(end = 12.dp)

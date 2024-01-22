@@ -2,7 +2,6 @@ package com.example.greenkim
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -14,7 +13,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Spinner
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 
@@ -44,6 +42,14 @@ class CheckPostActivity : AppCompatActivity() {
         val adapter = ArrayAdapter<String>(this, R.layout.spinner_dropdown_item, boardOptions)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         boardSpinner.adapter = adapter
+
+        val selectedBoard = intent.getStringExtra("selectedBoard")
+        val position = boardOptions.indexOf(selectedBoard)
+        if (position != -1) {
+            // Set the Spinner selection
+            boardSpinner.setSelection(position)
+        }
+
 
         // 드롭다운 메뉴 선택 이벤트
         boardSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {

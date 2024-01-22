@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -29,6 +30,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -206,10 +208,23 @@ fun ZeroActivities() {
                     .size(100.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.e_receipt),
-                    contentDescription = null
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Icon(
+                        painter = painterResource(id = R.drawable.e_receipt),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(width = 50.dp, height = 50.dp)
+                    )
+                    Text(
+                        text = "전자영수증",
+                        fontFamily = lineKorFamily,
+                        fontSize = 14.sp,
+                        modifier=Modifier.padding(top=4.dp)
+                    )
+                }
             }
             FilledIconButton(
                 onClick = { /*TODO*/ },
@@ -219,10 +234,23 @@ fun ZeroActivities() {
                     .size(100.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.reform),
-                    contentDescription = null
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Icon(
+                        painter = painterResource(id = R.drawable.reuse),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(width = 50.dp, height = 50.dp)
+                    )
+                    Text(
+                        text = "리유저블 활동",
+                        fontFamily = lineKorFamily,
+                        fontSize = 14.sp,
+                        modifier=Modifier.padding(top=4.dp)
+                    )
+                }
             }
             FilledIconButton(
                 onClick = { /*TODO*/ },
@@ -232,10 +260,23 @@ fun ZeroActivities() {
                     .size(100.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.reuse),
-                    contentDescription = null
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Icon(
+                        painter = painterResource(id = R.drawable.plastic_free),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(width = 50.dp, height = 50.dp)
+                    )
+                    Text(
+                        text = "플라스틱 프리",
+                        fontFamily = lineKorFamily,
+                        fontSize = 14.sp,
+                        modifier=Modifier.padding(top=4.dp)
+                    )
+                }
             }
             FilledIconButton(
                 onClick = { /*TODO*/ },
@@ -245,10 +286,23 @@ fun ZeroActivities() {
                     .size(100.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.transport),
-                    contentDescription = null
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Icon(
+                        painter = painterResource(id = R.drawable.flogging),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(width = 50.dp, height = 50.dp)
+                    )
+                    Text(
+                        text = "플로깅",
+                        fontFamily = lineKorFamily,
+                        fontSize = 14.sp,
+                        modifier=Modifier.padding(top=4.dp)
+                    )
+                }
             }
             FilledIconButton(
                 onClick = { /*TODO*/ },
@@ -258,10 +312,23 @@ fun ZeroActivities() {
                     .size(100.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.flogging),
-                    contentDescription = null
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Icon(
+                        painter = painterResource(id = R.drawable.reform),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(width = 50.dp, height = 50.dp)
+                    )
+                    Text(
+                        text = "리폼",
+                        fontFamily = lineKorFamily,
+                        fontSize = 14.sp,
+                        modifier=Modifier.padding(top=4.dp)
+                    )
+                }
             }
             FilledIconButton(
                 onClick = { /*TODO*/ },
@@ -271,10 +338,23 @@ fun ZeroActivities() {
                     .size(100.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.plastic_free),
-                    contentDescription = null
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Icon(
+                        painter = painterResource(id = R.drawable.transport),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(width = 50.dp, height = 50.dp)
+                    )
+                    Text(
+                        text = "대중교통",
+                        fontFamily = lineKorFamily,
+                        fontSize = 14.sp,
+                        modifier=Modifier.padding(top=4.dp)
+                    )
+                }
             }
             FilledIconButton(
                 onClick = { /*TODO*/ },
@@ -284,10 +364,23 @@ fun ZeroActivities() {
                     .size(100.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(Color(0xFFC7E6BF))
             ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.etc),
-                    contentDescription = null
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ){
+                    Icon(
+                        painter = painterResource(id = R.drawable.etc),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(width = 50.dp, height = 50.dp)
+                    )
+                    Text(
+                        text = "기타",
+                        fontFamily = lineKorFamily,
+                        fontSize = 14.sp,
+                        modifier=Modifier.padding(top=4.dp)
+                    )
+                }
             }
         }
     }

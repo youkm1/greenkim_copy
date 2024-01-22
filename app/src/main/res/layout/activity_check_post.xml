@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="오늘 실천한 제로웨이스트"
+            android:text="오늘 실천한 제로 웨이스트"
             android:textSize="15sp"
             android:fontFamily="@font/lineseed_kor_bold"/>
 

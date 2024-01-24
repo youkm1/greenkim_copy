@@ -1,13 +1,14 @@
 package com.example.greenkim
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.greenkim.databinding.ActivityCommunityBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class CommunityActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityCommunityBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -27,13 +28,9 @@ class CommunityActivity : AppCompatActivity() {
         }.attach()
 
         fragmentToLoad?.let {
-            if (it == "ProofFragment") {
+            if (it == "ComfirmationFragment") {
                 binding.viewPager.currentItem = 1
             }
         }
-
     }
-
-
-
 }

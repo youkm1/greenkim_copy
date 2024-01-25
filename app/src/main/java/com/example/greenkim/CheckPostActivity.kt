@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 
@@ -75,6 +76,7 @@ class CheckPostActivity : AppCompatActivity() {
             // 데이터 서버로 넘기는 로직 필요
 
             finish()
+            Toast.makeText(this,"완료되었습니다!",Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -97,6 +99,7 @@ class CheckPostActivity : AppCompatActivity() {
     private fun openGallery() {
         val galleryIntent =
             Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+
         startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST)
     }
 

@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.greenkim.databinding.FragmentComfirmationBinding
+import com.example.greenkim.databinding.FragmentConfirmationBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
@@ -17,13 +17,13 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ComfirmationFragment.newInstance] factory method to
+ * Use the [ConfirmationFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ComfirmationFragment : Fragment() {
+class ConfirmationFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
-    val binding by lazy { FragmentComfirmationBinding.inflate(layoutInflater) }
+    val binding by lazy { FragmentConfirmationBinding.inflate(layoutInflater) }
     private var param1: String? = null
     private var param2: String? = null
 
@@ -97,7 +97,7 @@ class ComfirmationFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ComfirmationFragment().apply {
+            ConfirmationFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

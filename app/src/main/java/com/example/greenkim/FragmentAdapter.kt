@@ -7,7 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class FragmentAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
 
-    var fragmentList = listOf<Fragment>( CommunityFragment(), ComfirmationFragment())
+    var fragmentList = listOf<Fragment>( CommunityFragment(), ConfirmationFragment())
     override fun getItemCount(): Int {
         return fragmentList.size
     }

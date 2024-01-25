@@ -15,7 +15,7 @@ class CommunityActivity : AppCompatActivity() {
 
         val fragmentToLoad = intent.getStringExtra("fragmentToLoad")
 
-        val fragmentList = listOf(CommunityFragment(), ComfirmationFragment())
+        val fragmentList = listOf(CommunityFragment(), ConfirmationFragment())
 
         val adapter_fragment = FragmentAdapter(this)
         adapter_fragment.fragmentList = fragmentList

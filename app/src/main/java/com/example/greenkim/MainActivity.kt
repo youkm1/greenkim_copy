@@ -106,6 +106,7 @@ fun CommunitySection() {
     val context = LocalContext.current
     Spacer(modifier = Modifier.size(30.dp))
 
+
     Row(
         Modifier
             .fillMaxWidth()
@@ -125,6 +126,7 @@ fun CommunitySection() {
             Icon(
                 imageVector = Icons.Filled.ArrowForward, contentDescription = null,
             )
+
         }
 
     }

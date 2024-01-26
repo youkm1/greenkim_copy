@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val btnReuse = findViewById<LinearLayout>(R.id.btn_reuse)
-        btnReuse.setOnClickListener {
+        btnReuse.setOnClickㅎListener {
             navigateToCheckPostActivity("리유저블 활동")
         }
 

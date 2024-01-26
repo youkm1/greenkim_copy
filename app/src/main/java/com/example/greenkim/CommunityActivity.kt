@@ -1,6 +1,8 @@
 package com.example.greenkim
 
+import android.graphics.Color
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenkim.databinding.ActivityCommunityBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -32,5 +34,9 @@ class CommunityActivity : AppCompatActivity() {
                 binding.viewPager.currentItem = 1
             }
         }
+
+        val buttonHome = findViewById<ImageButton>(R.id.button_language)
+        buttonHome.setColorFilter(Color.parseColor("#288156"), android.graphics.PorterDuff.Mode.SRC_IN)
+
     }
 }

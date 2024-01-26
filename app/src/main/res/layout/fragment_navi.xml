@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp">
 
@@ -54,6 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#000000"
-        android:layout_below="@id/button_home"/>
+        android:layout_below="@id/button_home"
+        tools:ignore="NotSibling" />
 
 </RelativeLayout>

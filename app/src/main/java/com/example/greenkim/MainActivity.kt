@@ -1,8 +1,10 @@
 package com.example.greenkim
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 
@@ -62,6 +64,10 @@ class MainActivity : AppCompatActivity() {
         btnEtc.setOnClickListener {
             navigateToCheckPostActivity("기타")
         }
+
+        val buttonHome = findViewById<ImageButton>(R.id.button_home)
+        buttonHome.setColorFilter(Color.parseColor("#288156"), android.graphics.PorterDuff.Mode.SRC_IN)
+
     }
 
     private fun navigateToCheckPostActivity(selectedBoard: String) {

@@ -42,8 +42,5 @@ class CommunityActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
 
-        val buttonLanguage = findViewById<ImageButton>(R.id.button_language)
-        buttonLanguage.setColorFilter(Color.parseColor("#288156"), android.graphics.PorterDuff.Mode.SRC_IN)
-
     }
 }

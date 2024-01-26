@@ -66,9 +66,6 @@ class MainActivity : AppCompatActivity() {
             navigateToCheckPostActivity("기타")
         }
 
-        val buttonHome = findViewById<ImageButton>(R.id.button_home)
-        buttonHome.setColorFilter(Color.parseColor("#288156"), android.graphics.PorterDuff.Mode.SRC_IN)
-
         // NaviFragment를 추가
         val naviFragment = NaviFragment()
         val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()

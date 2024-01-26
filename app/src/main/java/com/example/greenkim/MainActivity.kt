@@ -1,10 +1,13 @@
 package com.example.greenkim
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,6 +65,14 @@ class MainActivity : AppCompatActivity() {
         btnEtc.setOnClickListener {
             navigateToCheckPostActivity("기타")
         }
+
+        // NaviFragment를 추가
+        val naviFragment = NaviFragment()
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container, naviFragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+
     }
 
     private fun navigateToCheckPostActivity(selectedBoard: String) {

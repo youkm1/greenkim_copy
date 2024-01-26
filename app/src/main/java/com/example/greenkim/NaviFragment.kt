@@ -24,10 +24,10 @@ class NaviFragment : Fragment() {
         // 현재 액티비티를 확인
         val currentActivity = activity
 
-        // MainActivity에 있을 때 button_home의 색상을 변경
-        if (currentActivity is MainActivity) {
-            homeButton.setColorFilter(Color.parseColor("#288156"), android.graphics.PorterDuff.Mode.SRC_IN)
-        }
+//        // MainActivity에 있을 때 button_home의 색상을 변경
+//        if (currentActivity is MainActivity) {
+//            homeButton.setColorFilter(Color.parseColor("#288156"), android.graphics.PorterDuff.Mode.SRC_IN)
+//        }
 
         // CommunityActivity에 있을 때 button_language의 색상을 변경
         if (currentActivity is CommunityActivity) {

@@ -146,12 +146,14 @@ fun CommunitySection() {
         TextButton(onClick = { /*TODO*/ }) {
             Text(text = "서울역 근처 제로웨이스트 샵 추천 간다 ㅋ", fontFamily = lineKorFamily, fontSize = 18.sp)
         }
+
         TextButton(onClick = { /*TODO*/ }) {
             Text(
                 text = "[서울 비건 활동 모임]- 관심 있는 그린이들 어서 오세요 마감일...",
                 fontFamily = lineKorFamily,
                 fontSize = 18.sp
             )
+
         }
     }
 

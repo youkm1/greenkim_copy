@@ -2,6 +2,7 @@ package com.example.greenkim
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -146,6 +147,7 @@ fun CommunitySection() {
         TextButton(onClick = { /*TODO*/ }) {
             Text(text = "서울역 근처 제로웨이스트 샵 추천 간다 ㅋ", fontFamily = lineKorFamily, fontSize = 18.sp)
         }
+
 
         TextButton(onClick = { /*TODO*/ }) {
             Text(
